@@ -17,6 +17,14 @@ namespace ParasoftReportExtension.Parsers
             try
             {
                 var json = File.ReadAllText(filePath);
+                
+                // Configure JSON settings to avoid schema validation
+                var jsonSettings = new JsonSerializerSettings
+                {
+                    DateParseHandling = DateParseHandling.None,
+                    FloatParseHandling = FloatParseHandling.Decimal
+                };
+                
                 var sarif = JObject.Parse(json);
 
                 var runs = sarif["runs"] as JArray;
