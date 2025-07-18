@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CommandTable xmlns="http://schemas.microsoft.com/VisualStudio/2005-10-18/CommandTable" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <Extern href="stdidcmd.h"/>
+  <Extern href="vsshlids.h"/>
+
+  <Commands package="guidParasoftReportExtensionPackage">
+    <Groups>
+      <Group guid="guidParasoftReportExtensionPackageCmdSet" id="ParasoftMenuGroup" priority="0x0600">
+        <Parent guid="guidSHLMainMenu" id="IDM_VS_MENU_TOOLS"/>
+      </Group>
+    </Groups>
+
+    <Buttons>
+      <Button guid="guidParasoftReportExtensionPackageCmdSet" id="LoadReportCommandId" priority="0x0100" type="Button">
+        <Parent guid="guidParasoftReportExtensionPackageCmdSet" id="ParasoftMenuGroup" />
+        <Strings>
+          <ButtonText>Load Parasoft C++TEST Report</ButtonText>
+        </Strings>
+      </Button>
+    </Buttons>
+  </Commands>
+
+  <Symbols>
+    <GuidSymbol name="guidParasoftReportExtensionPackage" value="{12345678-1234-1234-1234-123456789012}" />
+    
+    <GuidSymbol name="guidParasoftReportExtensionPackageCmdSet" value="{87654321-4321-4321-4321-210987654321}">
+      <IDSymbol name="ParasoftMenuGroup" value="0x1020" />
+      <IDSymbol name="LoadReportCommandId" value="0x0100" />
+    </GuidSymbol>
+  </Symbols>
+</CommandTable>
